@@ -14,6 +14,23 @@ var INVENTORY = [
 ];
 
 // MAIN DATA ENDS
+// SMALL FUNCTIONS START
+function AddToCart(cart_item) {
+    var counter = 0;
+    counter += 1;
+    console.log(counter);
+    console.log(INVENTORY[cart_item].name + ' was added to the cart!');
+}
+function RemoveFromCart(cart_item) {
+    var counter = 0;
+    counter += 1;
+    console.log(counter);
+    console.log(INVENTORY[cart_item].name + ' was removed from the cart.');
+}
+// SMALL FUNCTIONS END
+// JQUERY STARTS
+
+// JQUERY ENDS
 // FOR LOOPS START
 
 function show_inventory() {
@@ -24,8 +41,9 @@ function show_inventory() {
             INVENTORY[i].name +
             '<br>$' +
             INVENTORY[i].price +
-            '<br><button id="AddToCart">Add To Cart</button><br><button id="RemoveFromCart">Remove From Cart</button>';
-        ('</p>');
+            '<br><button onclick="AddToCart(' +
+            i +
+            ')">Add To Cart</button><br><button id="RemoveFromCart">Remove From Cart</button></p>';
     }
     $('#Inventory-List').html(inventory);
 }
