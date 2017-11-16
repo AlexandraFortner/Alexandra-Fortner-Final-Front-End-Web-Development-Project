@@ -26,7 +26,7 @@ var INVENTORY = [
         price: 10.23,
         inStock: 12,
         picture_url:
-            'https://www298.lunapic.com/do-not-link-here-use-hosting-instead/151085885388182?8615660644'
+            'https://static.comicvine.com/uploads/scale_large/0/6063/1368589-prv6207_cov.jpg'
     },
     {
         name: 'The Death Of Superman',
