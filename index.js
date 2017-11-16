@@ -126,6 +126,7 @@ function CheckOut() {
 // SMALL FUNCTIONS END
 // .CLICKS START
 $('#cart-button').click(function() {
+    $('#Sell-Form').html('');
     $('#Inventory-List').html('');
     cart = '';
     cart =
@@ -143,11 +144,19 @@ $('#cart-button').click(function() {
             '<button id="checkout-button" onclick="CheckOut()">Checkout!</button>'
     );
 });
+$('#Sell-Form-Button').click(function() {
+    $('#Inventory-List').html('');
+    $('#Cart-List').html('');
+    var sell_form =
+        '<br><button id="Back-Button" onclick="draw()">Back</button><br><div class="form-group"><label class="col-form-label col-form-label-sm" for="inputSmall">Small input</label><input class="form-control form-control-sm" type="text" id="inputSmall"></div>';
+    $('#Sell-Form').html(sell_form);
+});
 // .CLICKS END
 
 // MAIN FUNCTIONS BEGIN
 
 function draw() {
+    $('#Sell-Form').html('');
     $('#Cart-List').html('');
     inventory = '';
     for (i = 0; i < INVENTORY.length; i++) {

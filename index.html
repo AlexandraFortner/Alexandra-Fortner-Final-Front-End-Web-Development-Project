@@ -18,15 +18,22 @@
         <div class="container box">
             <div class='velvet main-box'>
                 <h1>Holy Comic Books, Batman!
-                    <button id="cart-button">
+                    <br>
+                    <button class="col-sm-6 raise" id="Sell-Form-Button">
+                        <i class="fa fa-money" aria-hidden="true"></i>
+                    </button>
+                    <button class="col-sm-9 raise" id="cart-button">
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                     </button>
-
                 </h1>
+                <div id="Sell-Form"></div>
                 <div id="Inventory-List" class="dark-roast">
                 </div>
                 <div id="Cart-List" class="light-roast">
-                    <button id="Back-Button" hidden onclick="showInventory()"></button>
+                    <button id="Back-Button" hidden onclick="draw()"></button>
+                </div>
+                <div id="Sell-Form" class="light-roast">
+                    <button id="Back-Button-Sell" hidden onclick="draw()"></button>
                 </div>
                 <div id="Cart-Total"></div>
             </div>
