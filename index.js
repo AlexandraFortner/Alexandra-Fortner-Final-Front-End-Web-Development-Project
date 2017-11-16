@@ -115,12 +115,15 @@ function RemoveFromCart(cart_item) {
     }
 }
 function CheckOut() {
-    console.log('Hi!');
+    var full_cart = '';
+    var total = 0.0;
+    for (y = 0; y < CART.length; y++) {
+        total += CART[y].price;
+    }
+    full_cart += '<br><b><li>' + total + '</b></li>';
+    $('#Cart-Total').html(full_cart);
 }
 // SMALL FUNCTIONS END
-// JQUERY STARTS
-
-// JQUERY ENDS
 // .CLICKS START
 $('#cart-button').click(function() {
     $('#Inventory-List').html('');
@@ -128,8 +131,6 @@ $('#cart-button').click(function() {
     cart =
         '<br><button id="Back-Button" onclick="draw()">Back</button><br><br>Total:<br>';
     for (n = 0; n < CART.length; n++) {
-        var total = CART[n].price;
-        console.log(total);
         cart +=
             '<br><b><li>' +
             CART[n].name +
