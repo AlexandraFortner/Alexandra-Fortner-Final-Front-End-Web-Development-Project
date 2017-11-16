@@ -43,7 +43,9 @@ function show_inventory() {
             INVENTORY[i].price +
             '<br><button onclick="AddToCart(' +
             i +
-            ')">Add To Cart</button><br><button id="RemoveFromCart">Remove From Cart</button></p>';
+            ')">Add To Cart</button><br><button id="RemoveFromCart" onclick="RemoveFromCart(' +
+            i +
+            ')">Remove From Cart</button></p>';
     }
     $('#Inventory-List').html(inventory);
 }

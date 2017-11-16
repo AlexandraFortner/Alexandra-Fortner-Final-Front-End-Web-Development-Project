@@ -1,1 +1,27 @@
+.cream {
+    background-color: #fff4e6;
+}
 
+.velvet {
+    background-color: #854442;
+}
+
+.medium-roast {
+    background-color: #4b3832;
+}
+
+.dark-roast {
+    background-color: #3c2f2f;
+}
+
+.light-roast {
+    background-color: #be9b7b;
+}
+
+.box {
+    width: 50%;
+    margin-bottom: 20px;
+    padding: 0px 15px;
+    border-radius: 12px;
+    /* border-color: #22cc77; */
+}
