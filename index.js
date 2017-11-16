@@ -98,17 +98,24 @@ function AddToCart(cart_item) {
     }
 }
 function RemoveFromCart(cart_item) {
-    if (INVENTORY[cart_item].inStock) {
-        alertify.error(
-            'Sorry! ' + INVENTORY[cart_item].name + ' is out of stock!'
-        );
+    if (CART.includes(INVENTORY[cart_item]) === false) {
+        $('#RemoveFromCartInventory' + cart_item).attr('disabled', true);
+        draw();
     } else {
+        var index = CART.indexOf(INVENTORY[cart_item]);
+        if (index > -1) {
+            CART.splice(index, 1);
+        }
         INVENTORY[cart_item].inStock += 1;
+        $('#RemoveFromCartInventory' + cart_item).removeAttr('disabled');
         draw();
         alertify.log(
             'You Removed ' + INVENTORY[cart_item].name + ' from your cart.'
         );
     }
+}
+function CheckOut() {
+    console.log('Hi!');
 }
 // SMALL FUNCTIONS END
 // JQUERY STARTS
@@ -118,18 +125,22 @@ function RemoveFromCart(cart_item) {
 $('#cart-button').click(function() {
     $('#Inventory-List').html('');
     cart = '';
-    cart = '<button id="Back-Button" onclick="draw()">Back</button><br>Total:';
+    cart =
+        '<br><button id="Back-Button" onclick="draw()">Back</button><br><br>Total:<br>';
     for (n = 0; n < CART.length; n++) {
         var total = CART[n].price;
         console.log(total);
         cart +=
-            '<br><br><b><li>' +
+            '<br><b><li>' +
             CART[n].name +
-            '</li></b><button id="RemoveFromCart" onclick="RemoveFromCart(' +
+            '</b>&emsp;<button id="RemoveFromCartList" onclick="RemoveFromCart(' +
             n +
-            ')"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button>';
+            ')"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button></li>';
     }
-    $('#Cart-List').html(cart);
+    $('#Cart-List').html(
+        cart +
+            '<button id="checkout-button" onclick="CheckOut()">Checkout!</button>'
+    );
 });
 // .CLICKS END
 
@@ -140,7 +151,9 @@ function draw() {
     inventory = '';
     for (i = 0; i < INVENTORY.length; i++) {
         inventory +=
-            '<p><div class="row"></b></div><br><div class="col"><button id="AddToCart" onclick="AddToCart(' +
+            '<p><div class="row"></b></div><br><div class="col"><button id="AddToCart"' +
+            i +
+            ' onclick="AddToCart(' +
             i +
             ')"><i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i></button></div><img src="' +
             INVENTORY[i].picture_url +
@@ -150,7 +163,9 @@ function draw() {
             INVENTORY[i].price +
             '<br>In Stock: ' +
             INVENTORY[i].inStock +
-            '<br><div class="col"><button id="RemoveFromCart" onclick="RemoveFromCart(' +
+            '<br><div class="col"><button id="RemoveFromCartInventory' +
+            i +
+            '"onclick="RemoveFromCart(' +
             i +
             ')"><i class="fa fa-cart-arrow-down fa-2x" aria-hidden="true"></i></button></div></div></p>';
     }
