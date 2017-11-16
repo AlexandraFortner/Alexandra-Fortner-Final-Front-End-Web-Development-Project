@@ -31,6 +31,11 @@ function RemoveFromCart(cart_item) {
 // JQUERY STARTS
 
 // JQUERY ENDS
+// .CLICKS START
+$('#cart-button').click(function() {
+    console.log('Cart was clicked!');
+});
+// .CLICKS END
 // FOR LOOPS START
 
 function show_inventory() {
@@ -51,9 +56,14 @@ function show_inventory() {
 }
 
 // FOR LOOPS END
+// MAIN FUNCTIONS BEGIN
+
+function draw() {}
 
 function main() {
     show_inventory();
 }
+
+// MAIN FUNCTIONS END
 
 $(main);
