@@ -38,11 +38,17 @@ function AddToCart(cart_item) {
     }
 }
 function RemoveFromCart(cart_item) {
-    INVENTORY[cart_item].inStock += 1;
-    show_inventory();
-    alertify.error(
-        'You Removed ' + INVENTORY[cart_item].name + ' from your cart!'
-    );
+    if (INVENTORY[cart_item].inStock) {
+        alertify.error(
+            'Sorry! ' + INVENTORY[cart_item].name + ' is out of stock!'
+        );
+    } else {
+        INVENTORY[cart_item].inStock += 1;
+        show_inventory();
+        alertify.log(
+            'You Removed ' + INVENTORY[cart_item].name + ' from your cart.'
+        );
+    }
 }
 // SMALL FUNCTIONS END
 // JQUERY STARTS
@@ -50,7 +56,19 @@ function RemoveFromCart(cart_item) {
 // JQUERY ENDS
 // .CLICKS START
 $('#cart-button').click(function() {
-    console.log('Cart was clicked!');
+    $('#Inventory-List').html('');
+    cart = '';
+    cart = '<button id="Back-Button" onclick="show_inventory()">Back</button>';
+    for (n = 0; n < CART.length; n++) {
+        console.log('I got clicked!');
+        cart +=
+            '<p><b>&nbsp;&nbsp;' +
+            CART[n] +
+            '</b><br><button id="RemoveFromCart" onclick="RemoveFromCart(' +
+            n +
+            ')">Remove From Cart</button></p>';
+    }
+    $('#Cart-List').html(cart);
 });
 // .CLICKS END
 // FOR LOOPS START
