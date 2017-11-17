@@ -126,7 +126,12 @@ function CheckOut() {
 // SMALL FUNCTIONS END
 // .CLICKS START
 $('#cart-button').click(function() {
-    $('#Sell-Form').html('');
+    $('#Item-Name').attr('hidden', 'hidden');
+    $('#Item-Price').attr('hidden', 'hidden');
+    $('#Item-Seller').attr('hidden', 'hidden');
+    $('#Item-Url').attr('hidden', 'hidden');
+    $('#How-Many-Items').attr('hidden', 'hidden');
+    $('#Sell-This-Form').attr('hidden', 'hidden');
     $('#Inventory-List').html('');
     cart = '';
     cart =
