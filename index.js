@@ -120,7 +120,8 @@ function CheckOut() {
     for (y = 0; y < CART.length; y++) {
         total += CART[y].price;
     }
-    full_cart += '<br><b><li>' + total + '</b></li>';
+    full_cart +=
+        '<div class="light-roast"><br><b><li>' + total + '</b></li></div>';
     $('#Cart-Total').html(full_cart);
 }
 // SMALL FUNCTIONS END
@@ -134,19 +135,16 @@ $('#cart-button').click(function() {
     $('#Sell-This-Form').attr('hidden', 'hidden');
     $('#Inventory-List').html('');
     cart = '';
-    cart =
-        '<br><button id="Back-Button" onclick="draw()">Back</button><br><br>Total:<br>';
+    cart = '<br><u><h3>Your Cart:</h3></u><br>';
     for (n = 0; n < CART.length; n++) {
-        cart +=
-            '<br><b><li>' +
-            CART[n].name +
-            '</b>&emsp;<button id="RemoveFromCartList" onclick="RemoveFromCart(' +
-            n +
-            ')"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button></li>';
+        cart += '<b><li>' + CART[n].name;
+        // _+ '</b>&emsp;<button id="RemoveFromCartList" onclick="RemoveFromCart(' +
+        // n +
+        // ')"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button></li>';
     }
     $('#Cart-List').html(
         cart +
-            '<button id="checkout-button" onclick="CheckOut()">Checkout!</button>'
+            '<br><br><button id="checkout-button" onclick="CheckOut()">Checkout!</button><br>'
     );
 });
 $('#Sell-Form-Button').click(function() {
@@ -158,6 +156,7 @@ $('#Sell-Form-Button').click(function() {
     $('#Item-Url').removeAttr('hidden');
     $('#How-Many-Items').removeAttr('hidden');
     $('#Sell-This-Form').removeAttr('hidden');
+    $('#Back-Button-Sell').removeAttr('hidden');
 });
 // .CLICKS END
 
