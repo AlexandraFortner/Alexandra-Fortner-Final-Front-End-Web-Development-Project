@@ -178,11 +178,15 @@ $('#Sell-Form-Button').click(function() {
 });
 $('#Sell-Button').click(function() {
     // I need to append the selling data to the INVENTORY
-    $('#Item-Name').removeAttr('hidden');
-    $('#Item-Price').removeAttr('hidden');
-    $('#Item-Seller').removeAttr('hidden');
-    $('#Item-Url').removeAttr('hidden');
-    $('#How-Many-Items').removeAttr('hidden');
+    new_comic = {
+        name: $('#Item-Name').val(),
+        price: $('#Item-Price').val(),
+        seller: $('#Item-Seller').val(),
+        picture_url: $('#Item-Url').val(),
+        inStock: $('#How-Many-Items').val()
+    };
+    INVENTORY.push(new_comic);
+    draw();
 });
 // .CLICKS END
 
