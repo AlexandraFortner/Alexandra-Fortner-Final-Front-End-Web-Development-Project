@@ -163,7 +163,12 @@ $('#Sell-Form-Button').click(function() {
 // MAIN FUNCTIONS BEGIN
 
 function draw() {
-    $('#Sell-Form').html('');
+    $('#Item-Name').attr('hidden', 'hidden');
+    $('#Item-Price').attr('hidden', 'hidden');
+    $('#Item-Seller').attr('hidden', 'hidden');
+    $('#Item-Url').attr('hidden', 'hidden');
+    $('#How-Many-Items').attr('hidden', 'hidden');
+    $('#Sell-This-Form').attr('hidden', 'hidden');
     $('#Cart-List').html('');
     inventory = '';
     for (i = 0; i < INVENTORY.length; i++) {
