@@ -133,6 +133,7 @@ $('#cart-button').click(function() {
     $('#Item-Url').attr('hidden', 'hidden');
     $('#How-Many-Items').attr('hidden', 'hidden');
     $('#Sell-This-Form').attr('hidden', 'hidden');
+    $('#Back-Button').removeAttr('hidden');
     $('#Inventory-List').html('');
     cart = '';
     cart = '<br><u><h3>Your Cart:</h3></u><br>';

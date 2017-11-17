@@ -33,9 +33,7 @@
                     </h1>
                 </div>
                 <div id="Sell-This-Form" class='light-roast' hidden>
-                    <button id='Sell-Button'>Sell it!
-                        <i class="fa fa-plus" aria-hidden="true"></i>
-                    </button>
+                    <button id="Back-Button-Sell" hidden onclick="draw()">Back</button>
                     <p>
                         <input id="Item-Name" type='text' placeholder="Name Of Item" hidden value="Avengers: Age Of Ultron ||| Book 1">
                     </p>
@@ -51,13 +49,19 @@
                         <p>
                             <input id='How-Many-Items' type='Number' placeholder="Quanity?" hidden value="1">
                         </p>
+                        <button id='Sell-Button'>Sell it!
+                            <i class="fa fa-plus" aria-hidden="true"></i>
+                            <br>
+                        </button>
+                        <br>
                 </div>
                 <div id="Inventory-List" class="dark-roast">
                 </div>
-                <div id="Cart-List" class="light-roast">
+                <div class='light-roast'>
                     <button id="Back-Button" hidden onclick="draw()">Back</button>
                 </div>
-                <button id="Back-Button-Sell" hidden onclick="draw()">Back</button>
+                <div id="Cart-List" class="light-roast">
+                </div>
                 <div id="Cart-Total"></div>
             </div>
         </div>
