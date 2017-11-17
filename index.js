@@ -121,12 +121,16 @@ function CheckOut() {
         total += CART[y].price;
     }
     full_cart +=
-        '<div class="light-roast"><br><b><li>' + total + '</b></li></div>';
+        '<div id="Total" class="light-roast"><br><b><li>' +
+        total +
+        '</b></li></div>';
     $('#Cart-Total').html(full_cart);
 }
+
 // SMALL FUNCTIONS END
 // .CLICKS START
 $('#cart-button').click(function() {
+    $('#Total').removeAttr('hidden');
     $('#Item-Name').attr('hidden', 'hidden');
     $('#Item-Price').attr('hidden', 'hidden');
     $('#Item-Seller').attr('hidden', 'hidden');
@@ -149,8 +153,10 @@ $('#cart-button').click(function() {
     );
 });
 $('#Sell-Form-Button').click(function() {
+    $('#Total').attr('hidden', 'hidden');
     $('#Inventory-List').html('');
     $('#Cart-List').html('');
+    $('#Checkout').html('');
     $('#Item-Name').removeAttr('hidden');
     $('#Item-Price').removeAttr('hidden');
     $('#Item-Seller').removeAttr('hidden');
@@ -164,6 +170,8 @@ $('#Sell-Form-Button').click(function() {
 // MAIN FUNCTIONS BEGIN
 
 function draw() {
+    $('#Total').attr('hidden', 'hidden');
+    $('#Checkout').attr('hidden');
     $('#Item-Name').attr('hidden', 'hidden');
     $('#Item-Price').attr('hidden', 'hidden');
     $('#Item-Seller').attr('hidden', 'hidden');
