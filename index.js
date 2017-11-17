@@ -4,6 +4,7 @@ var INVENTORY = [
         name: 'Batman: The Killing Joke',
         price: 16.28,
         inStock: 20,
+        seller: 'Holy Comic Books, Batman!',
         picture_url:
             'http://www.thenerdelement.com/wordpress/wp-content/uploads/2016/07/Batman-The-Killing-Joke_Sdtk_Cover_1425px_RGB_300dpi.jpg'
     },
@@ -11,6 +12,7 @@ var INVENTORY = [
         name: 'Batman: Noël',
         price: 18.39,
         inStock: 24,
+        seller: 'Holy Comic Books, Batman!',
         picture_url:
             'https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Series/12433/12433._SX360_QL80_TTD_.jpg'
     },
@@ -18,6 +20,7 @@ var INVENTORY = [
         name: 'Batman: Year One',
         price: 5.93,
         inStock: 22,
+        seller: 'Holy Comic Books, Batman!',
         picture_url:
             'https://images-na.ssl-images-amazon.com/images/I/51sroPQ%2B9-L._SY344_BO1,204,203,200_.jpg'
     },
@@ -25,6 +28,7 @@ var INVENTORY = [
         name: 'Wolverine Goes To Hell',
         price: 10.23,
         inStock: 12,
+        seller: 'Holy Comic Books, Batman!',
         picture_url:
             'https://static.comicvine.com/uploads/scale_large/0/6063/1368589-prv6207_cov.jpg'
     },
@@ -32,6 +36,7 @@ var INVENTORY = [
         name: 'The Death Of Superman',
         price: 12.19,
         inStock: 9,
+        seller: 'Holy Comic Books, Batman!',
         picture_url:
             'https://images-na.ssl-images-amazon.com/images/I/517ostOFBPL._SY344_BO1,204,203,200_.jpg'
     },
@@ -39,6 +44,7 @@ var INVENTORY = [
         name: 'Batman: Hush',
         price: 7.21,
         inStock: 16,
+        seller: 'Holy Comic Books, Batman!',
         picture_url:
             'https://vignette.wikia.nocookie.net/marvel_dc/images/e/e2/Batman_-_Hush_TPB.jpg/revision/latest?cb=20131103230749'
     },
@@ -46,6 +52,7 @@ var INVENTORY = [
         name: 'Wonder Woman: The Hiketeia',
         price: 17.31,
         inStock: 34,
+        seller: 'Holy Comic Books, Batman!',
         picture_url:
             'https://vignette.wikia.nocookie.net/marvel_dc/images/7/71/Wonder_Woman_The_Hiketeia_Vol_1_1.jpeg/revision/latest/scale-to-width-down/329?cb=20120722114037'
     },
@@ -53,6 +60,7 @@ var INVENTORY = [
         name: 'Planet Hulk',
         price: 23.32,
         inStock: 6,
+        seller: 'Holy Comic Books, Batman!',
         picture_url:
             'http://images.comiccollectorlive.com/covers/f00/f005ca70-d137-4838-bc00-5d122d9a4410.jpg'
     },
@@ -60,6 +68,7 @@ var INVENTORY = [
         name: 'Avengers: Time Runs Out',
         price: 21.22,
         inStock: 10,
+        seller: 'Holy Comic Books, Batman!',
         picture_url:
             'https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/177253/DIG050003_1._SX1280_QL80_TTD_.jpg'
     },
@@ -67,6 +76,7 @@ var INVENTORY = [
         name: 'Deadpool Kills The Marvel Universe',
         price: 18.43,
         inStock: 17,
+        seller: 'Holy Comic Books, Batman!',
         picture_url:
             'http://vignette3.wikia.nocookie.net/marveldatabase/images/1/19/Deadpool_Kills_the_Marvel_Universe_Vol_1_1.jpg/revision/latest?cb=20120731185747'
     },
@@ -74,6 +84,7 @@ var INVENTORY = [
         name: 'Sgt. Fury and his Howling Commandos: Volume 1',
         price: 26.75,
         inStock: 4,
+        seller: 'Holy Comic Books, Batman!',
         picture_url:
             'https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Item/596119/596119._SX1280_QL80_TTD_.jpg'
     }
@@ -165,6 +176,14 @@ $('#Sell-Form-Button').click(function() {
     $('#Sell-This-Form').removeAttr('hidden');
     $('#Back-Button-Sell').removeAttr('hidden');
 });
+$('#Sell-Button').click(function() {
+    // I need to append the selling data to the INVENTORY
+    $('#Item-Name').removeAttr('hidden');
+    $('#Item-Price').removeAttr('hidden');
+    $('#Item-Seller').removeAttr('hidden');
+    $('#Item-Url').removeAttr('hidden');
+    $('#How-Many-Items').removeAttr('hidden');
+});
 // .CLICKS END
 
 // MAIN FUNCTIONS BEGIN
@@ -195,7 +214,9 @@ function draw() {
             INVENTORY[i].price +
             '<br>In Stock: ' +
             INVENTORY[i].inStock +
-            '<br><div class="col"><button id="RemoveFromCartInventory' +
+            '<br>Seller: ' +
+            INVENTORY[i].seller +
+            '<div class="col"><button id="RemoveFromCartInventory' +
             i +
             '"onclick="RemoveFromCart(' +
             i +
