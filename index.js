@@ -147,9 +147,12 @@ $('#cart-button').click(function() {
 $('#Sell-Form-Button').click(function() {
     $('#Inventory-List').html('');
     $('#Cart-List').html('');
-    var sell_form =
-        '<br><button id="Back-Button" onclick="draw()">Back</button><br><div class="form-group"><label class="col-form-label col-form-label-sm" for="inputSmall">Small input</label><input class="form-control form-control-sm" type="text" id="inputSmall"></div>';
-    $('#Sell-Form').html(sell_form);
+    $('#Item-Name').removeAttr('hidden');
+    $('#Item-Price').removeAttr('hidden');
+    $('#Item-Seller').removeAttr('hidden');
+    $('#Item-Url').removeAttr('hidden');
+    $('#How-Many-Items').removeAttr('hidden');
+    $('#Sell-This-Form').removeAttr('hidden');
 });
 // .CLICKS END
 

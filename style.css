@@ -23,7 +23,7 @@ body {
 }
 
 .box {
-    width: 80%;
+    width: 60%;
     margin-bottom: 20px;
     padding: 0px 15px;
     border-radius: 12px;
@@ -44,9 +44,18 @@ img {
     width: 200px;
     height: 220px;
 }
+#Sell-Form-Button {
+    margin-left: -20%;
+}
 
+#cart-button {
+    margin-right: -20%;
+}
+
+/* BOOTSTRAP THINGS */
 .container {
     width: 80%;
+    display: inline-block;
 }
 .column,
 .columns {
@@ -134,12 +143,6 @@ img {
     box-shadow: 0 0 0 2em rgba(#fff, 0);
 }
 
-@keyframes pulse {
-    0% {
-        box-shadow: 0 0 0 0 var(--hover);
-    }
-}
-
 /* Stack multiple shadows, one from the left, the other from the right */
 .close:hover,
 .close:focus {
@@ -182,29 +185,15 @@ body {
     font: 300 1em 'Fira Sans', sans-serif;
 
     /* Center everything ever */
-    justify-content: center;
-    align-content: center;
-    align-items: center;
-    text-align: center;
-    min-height: 100vh;
-    display: flex;
 }
 
 /* Basic button styles */
-button {
-    background: none;
-    border: 2px solid;
-    font: inherit;
-    line-height: 1;
-    margin: 0.5em;
-    padding: 1em 2em;
-}
 
 h1 {
     font-weight: 400;
 }
 
-code {
-    color: #e4cb58;
-    font: inherit;
-}
+/* TO SEE BOXES: GREAT FOR VISUALIZATION */
+/* * {
+    border: 1px solid gray;
+} */
