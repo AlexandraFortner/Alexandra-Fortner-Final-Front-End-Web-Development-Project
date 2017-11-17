@@ -137,10 +137,10 @@ $('#cart-button').click(function() {
     $('#Item-Url').attr('hidden', 'hidden');
     $('#How-Many-Items').attr('hidden', 'hidden');
     $('#Sell-This-Form').attr('hidden', 'hidden');
-    $('#Back-Button').removeAttr('hidden');
     $('#Inventory-List').html('');
     cart = '';
-    cart = '<br><u><h3>Your Cart:</h3></u><br>';
+    cart =
+        '<button id="Back-Button-Cart" onclick="draw()">Back</button><br><u><h3>Your Cart:</h3></u><br>';
     for (n = 0; n < CART.length; n++) {
         cart += '<b><li>' + CART[n].name;
         // _+ '</b>&emsp;<button id="RemoveFromCartList" onclick="RemoveFromCart(' +
@@ -156,7 +156,7 @@ $('#Sell-Form-Button').click(function() {
     $('#Total').attr('hidden', 'hidden');
     $('#Inventory-List').html('');
     $('#Cart-List').html('');
-    $('#Checkout').html('');
+    $('#Checkout').removeAttr('hidden');
     $('#Item-Name').removeAttr('hidden');
     $('#Item-Price').removeAttr('hidden');
     $('#Item-Seller').removeAttr('hidden');
@@ -170,6 +170,7 @@ $('#Sell-Form-Button').click(function() {
 // MAIN FUNCTIONS BEGIN
 
 function draw() {
+    $('#Checkout').attr('hidden', 'hidden');
     $('#Total').attr('hidden', 'hidden');
     $('#Checkout').attr('hidden');
     $('#Item-Name').attr('hidden', 'hidden');
