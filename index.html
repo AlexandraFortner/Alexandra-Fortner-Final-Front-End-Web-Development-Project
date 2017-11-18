@@ -15,25 +15,21 @@
 
 <body>
     <center>
-        <div class="container box">
+        <div class="container">
             <div class='velvet main-box'>
-                <div class="row">
-                    <h1>Holy Comic Books,
-                        <br> Batman!
-                        <div class="col-lg-3">
-                            <button class="raise" style="position:relative; top: 7px;" id="Sell-Form-Button">
-                                <i class="fa fa-money" aria-hidden="true"></i>
-                            </button>
-                        </div>
-                        <div class="col-lg-8">
-                            <button class="raise" style="position:relative; top:-30px;" id="cart-button">
-                                <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                <h1>Holy Comic Books,
+                    <br> Batman!
+                    <div class="col-lg-1">
+                        <button class="raise" style="position:relative; top: 7px;" id="Sell-Form-Button">
+                            <i class="fa fa-money" aria-hidden="true"></i>
+                        </button>
+                    </div>
+                    <button class="raise" style="position:relative; top:-30px;" id="cart-button">
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
 
-                            </button>
-                        </div>
-                    </h1>
-                </div>
-                <div id="Sell-This-Form" class='light-roast' hidden>
+                    </button>
+                </h1>
+                <div id="Sell-This-Form" class='medium-roast' hidden>
                     <button id="Back-Button-Sell" hidden onclick="draw()">Back</button>
                     <p>
                         <input id="Item-Name" type='text' placeholder="Name Of Item" hidden>
@@ -56,13 +52,13 @@
                     </button>
                     <br>
                 </div>
-                <div id="Inventory-List" class="dark-roast">
+                <div id="Inventory-List" class="dark-roast col-lg-3">
                 </div>
-                <div id="Checkout" class='light-roast'>
+                <div id="Checkout" class='medium-roast'>
                 </div>
-                <div id="Cart-List" class="light-roast">
+                <div id="Cart-List" class="medium-roast">
                 </div>
-                <div id="Cart-Total"></div>
+                <div id="Cart-Total" class='medium-roast'></div>
             </div>
         </div>
     </center>

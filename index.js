@@ -139,25 +139,11 @@ function CheckOut() {
         total += CART[y].price;
     }
     full_cart +=
-        '<div id="Total" class="light-roast"><br><b><li>' +
+        '<div id="Total" class="medium-roast"><br><b><li>' +
         total +
         '</b></li></div>';
     $('#Cart-Total').html(full_cart);
 }
-
-// function PreventIncorrectInformation() {
-//     var errorUL = $('#Item-Name-Error');
-//     var ItemName = $('#Item-Name').val();
-//     if (ItemName === '') {
-//         validations.ItemName === false;
-//         alertify.error('Must Fill In Name.');
-//     } else {
-//         validations.ItemName === true;
-//         errorUL.html('');
-//     }
-//     maybeEnableButton();
-// }
-
 $('#Item-Name').on('input', function(event) {
     var ItemName = event.currentTarget.value;
     if (ItemName === '') {
@@ -239,11 +225,6 @@ $('#Sell-Form-Button').click(function() {
     $('#Back-Button-Sell').removeAttr('hidden');
 });
 $('#Sell-Button').click(function() {
-    console.log(validations.ItemName);
-    console.log(validations.Seller);
-    console.log(validations.Price);
-    console.log(validations.PictureUrl);
-    console.log(validations.HowMany);
     if (
         validations.ItemName === true &&
         validations.Seller === true &&
