@@ -92,6 +92,13 @@ var INVENTORY = [
 
 var CART = [];
 
+var validations = {
+    ItemName: false,
+    Seller: false,
+    Price: false,
+    PictureUrl: false,
+    HowMany: false
+};
 // MAIN DATA ENDS
 // SMALL FUNCTIONS START
 function AddToCart(cart_item) {
@@ -138,6 +145,61 @@ function CheckOut() {
     $('#Cart-Total').html(full_cart);
 }
 
+// function PreventIncorrectInformation() {
+//     var errorUL = $('#Item-Name-Error');
+//     var ItemName = $('#Item-Name').val();
+//     if (ItemName === '') {
+//         validations.ItemName === false;
+//         alertify.error('Must Fill In Name.');
+//     } else {
+//         validations.ItemName === true;
+//         errorUL.html('');
+//     }
+//     maybeEnableButton();
+// }
+
+$('#Item-Name').on('input', function(event) {
+    var ItemName = event.currentTarget.value;
+    if (ItemName === '') {
+        validations.ItemName = false;
+    } else {
+        validations.ItemName = true;
+    }
+});
+
+$('#Item-Price').on('input', function(event) {
+    var ItemPrice = event.currentTarget.value;
+    if (ItemPrice <= 0) {
+        validations.Price = false;
+    } else {
+        validations.Price = true;
+    }
+});
+$('#Item-Seller').on('input', function(event) {
+    var ItemSeller = event.currentTarget.value;
+    if (ItemSeller === '') {
+        validations.Seller = false;
+    } else {
+        validations.Seller = true;
+    }
+});
+$('#Item-Url').on('input', function(event) {
+    var ItemUrl = event.currentTarget.value;
+    if (ItemUrl === '') {
+        validations.PictureUrl = false;
+    } else {
+        validations.PictureUrl = true;
+    }
+});
+$('#How-Many-Items').on('input', function(event) {
+    var ItemHowMany = event.currentTarget.value;
+    if (ItemHowMany <= 0) {
+        validations.HowMany = false;
+    } else {
+        validations.HowMany = true;
+    }
+});
+
 // SMALL FUNCTIONS END
 // .CLICKS START
 $('#cart-button').click(function() {
@@ -177,16 +239,30 @@ $('#Sell-Form-Button').click(function() {
     $('#Back-Button-Sell').removeAttr('hidden');
 });
 $('#Sell-Button').click(function() {
-    // I need to append the selling data to the INVENTORY
-    new_comic = {
-        name: $('#Item-Name').val(),
-        price: $('#Item-Price').val(),
-        seller: $('#Item-Seller').val(),
-        picture_url: $('#Item-Url').val(),
-        inStock: $('#How-Many-Items').val()
-    };
-    INVENTORY.push(new_comic);
-    draw();
+    console.log(validations.ItemName);
+    console.log(validations.Seller);
+    console.log(validations.Price);
+    console.log(validations.PictureUrl);
+    console.log(validations.HowMany);
+    if (
+        validations.ItemName === true &&
+        validations.Seller === true &&
+        validations.Price === true &&
+        validations.PictureUrl === true &&
+        validations.HowMany === true
+    ) {
+        new_comic = {
+            name: $('#Item-Name').val(),
+            price: $('#Item-Price').val(),
+            seller: $('#Item-Seller').val(),
+            picture_url: $('#Item-Url').val(),
+            inStock: $('#How-Many-Items').val()
+        };
+        INVENTORY.push(new_comic);
+        draw();
+    } else {
+        alertify.error('Please fill out all forms.');
+    }
 });
 // .CLICKS END
 
