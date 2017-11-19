@@ -263,13 +263,13 @@ function draw() {
     inventory = '';
     for (i = 0; i < INVENTORY.length; i++) {
         inventory +=
-            '<p><div class="row"></b></div><br><div class="col"><button id="AddToCart"' +
+            '<p><div class="row"></b></div><br><div class="col-sm-2"><button id="AddToCart"' +
             i +
             ' onclick="AddToCart(' +
             i +
             ')"><i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i></button></div><img src="' +
             INVENTORY[i].picture_url +
-            '"><div class="col"><b>&nbsp;&nbsp;' +
+            '"><div class="col-sm-3"><b>&nbsp;&nbsp;' +
             INVENTORY[i].name +
             '<br>$' +
             INVENTORY[i].price +
@@ -277,7 +277,7 @@ function draw() {
             INVENTORY[i].inStock +
             '<br>Seller: ' +
             INVENTORY[i].seller +
-            '<div class="col"><button id="RemoveFromCartInventory' +
+            '<div class="col-sm-4"><button id="RemoveFromCartInventory' +
             i +
             '"onclick="RemoveFromCart(' +
             i +
