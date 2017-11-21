@@ -226,6 +226,7 @@ $('#Sell-Form-Button').click(function() {
     $('#Back-Button-Sell').removeAttr('hidden');
 });
 $('#Sell-Button').click(function() {
+    itemPrice = parseFloat($('#Item-Price').val());
     if (
         validations.ItemName === true &&
         validations.Seller === true &&
@@ -235,7 +236,7 @@ $('#Sell-Button').click(function() {
     ) {
         new_comic = {
             name: $('#Item-Name').val(),
-            price: $('#Item-Price').val(),
+            price: itemPrice,
             seller: $('#Item-Seller').val(),
             picture_url: $('#Item-Url').val(),
             inStock: $('#How-Many-Items').val()
