@@ -144,6 +144,9 @@ function CheckOut() {
         '</b></li></div>';
     $('#Cart-Total').html(full_cart);
 }
+
+// SMALL FUNCTIONS END
+// VALIDATIONS START
 $('#Item-Name').on('input', function(event) {
     var ItemName = event.currentTarget.value;
     if (ItemName === '') {
@@ -152,7 +155,6 @@ $('#Item-Name').on('input', function(event) {
         validations.ItemName = true;
     }
 });
-
 $('#Item-Price').on('input', function(event) {
     var ItemPrice = event.currentTarget.value;
     if (ItemPrice <= 0) {
@@ -185,8 +187,7 @@ $('#How-Many-Items').on('input', function(event) {
         validations.HowMany = true;
     }
 });
-
-// SMALL FUNCTIONS END
+// VALIDATIONS END
 // .CLICKS START
 $('#cart-button').click(function() {
     $('#Total').removeAttr('hidden');
