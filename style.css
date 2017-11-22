@@ -178,9 +178,10 @@ img {
 
 /* Now every button will have different colors as set above. We get to use the same structure, only changing the custom properties. */
 button {
-    background-color: #fff4e6;
-    color: #4b3832;
+    background-color: #6e5148;
+    color: #fde8d0;
     transition: 0.25s;
+    border-radius: 10px;
 }
 
 /* === Pen styling, ignore */
