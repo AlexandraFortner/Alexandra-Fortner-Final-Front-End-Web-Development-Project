@@ -1,3 +1,5 @@
+/* COLORS START */
+
 .cream {
     background-color: #fff4e6;
 }
@@ -17,7 +19,8 @@
 .light-roast {
     background-color: #be9b7b;
 }
-
+/* COLORS END */
+/* BOXES START */
 .box {
     background-color: #854442;
     width: auto;
@@ -28,13 +31,14 @@
 }
 
 .main-box {
-    background-color: #be9b7b;
+    /* background-color: #be9b7b; */
     width: 50%;
     margin-bottom: 20px;
     padding: 12px 15px;
     border-radius: 15px;
 }
-
+/* BOXES END */
+/* IDS START */
 #AddToCart,
 b {
     display: inline;
@@ -50,7 +54,7 @@ img {
 #cart-button {
     margin-right: -20%;
 }
-
+/* IDS END */
 /* BOOTSTRAP THINGS */
 .container {
     width: 80%;
@@ -181,7 +185,11 @@ button {
 
 /* === Pen styling, ignore */
 body {
-    background: #16181c;
+    background: url(http://www.professional.id.au/images/bg/bg3.jpg)no-repeat center center fixed;
+    -webkit-background-size: cover;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    background-size: cover;
     color: #0a0a0a;
     font: 300 1em 'Fira Sans', sans-serif;
 
