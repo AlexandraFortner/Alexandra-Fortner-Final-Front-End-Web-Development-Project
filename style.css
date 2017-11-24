@@ -32,10 +32,13 @@
 
 .main-box {
     /* background-color: #be9b7b; */
+    background: rgba(0, 0, 0, 0.726);
     width: 50%;
     margin-bottom: 20px;
     padding: 12px 15px;
     border-radius: 15px;
+    border-style: outset;
+    display: inline-block;
 }
 /* BOXES END */
 /* IDS START */
@@ -119,64 +122,11 @@ img {
     width: 48%;
 }
 
-/* NOT MINE */
-
-/*
-  https://developer.mozilla.org/en/docs/Web/CSS/box-shadow
-  box-shadow: [inset?] [top] [left] [blur] [size] [color];
-
-  Tips:
-    - We're setting all the blurs to 0 since we want a solid fill.
-    - Add the inset keyword so the box-shadow is on the inside of the element
-    - Animating the inset shadow on hover looks like the element is filling in from whatever side you specify ([top] and [left] accept negative values to become [bottom] and [right])
-    - Multiple shadows can be stacked
-    - If you're animating multiple shadows, be sure to keep the same number of shadows so the animation is smooth. Otherwise, you'll get something choppy.
-*/
-
-/* Animate the size, inside */
-.fill:hover,
-.fill:focus {
-    box-shadow: inset 0 0 0 2em var(--hover);
-}
-
-/* Animate the size, outside */
-.pulse:hover,
-.pulse:focus {
-    animation: pulse 1s;
-    box-shadow: 0 0 0 2em rgba(#fff, 0);
-}
-
-/* Stack multiple shadows, one from the left, the other from the right */
-.close:hover,
-.close:focus {
-    box-shadow: inset -3.5em 0 0 0 var(--hover), inset 3.5em 0 0 0 var(--hover);
-}
-
-/* Size can also be negative; see how it's smaller than the element */
 .raise:hover,
 .raise:focus {
-    box-shadow: 0 0.5em 0.5em -0.4em var(--hover);
+    box-shadow: 0 0.5em 0.5em -0.4em;
     transform: translateY(-0.25em);
 }
-
-/* Animating from the bottom */
-.up:hover,
-.up:focus {
-    box-shadow: inset 0 -3.25em 0 0 var(--hover);
-}
-
-/* And from the left */
-.slide:hover,
-.slide:focus {
-    box-shadow: inset 6.5em 0 0 0 var(--hover);
-}
-
-/* Multiple shadows, one on the outside, another on the inside */
-.offset {
-    box-shadow: 0.3em 0.3em 0 0 var(--color), inset 0.3em 0.3em 0 0 var(--color);
-}
-
-/* Now every button will have different colors as set above. We get to use the same structure, only changing the custom properties. */
 button {
     background-color: #6e5148;
     color: #fde8d0;
@@ -184,20 +134,16 @@ button {
     border-radius: 10px;
 }
 
-/* === Pen styling, ignore */
 body {
-    background: url(http://www.professional.id.au/images/bg/bg3.jpg)no-repeat center center fixed;
+    background: url(http://www.professional.id.au/images/bg/bg3.jpg)no-repeat center
+        center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
     background-size: cover;
     color: #0a0a0a;
     font: 300 1em 'Fira Sans', sans-serif;
-
-    /* Center everything ever */
 }
-
-/* Basic button styles */
 
 h1 {
     font-weight: 400;
@@ -220,7 +166,7 @@ input[type='password'],
 textarea,
 select {
     height: 38px;
-    width: 120px;
+    width: 165px;
     padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
     background-color: #fff;
     border: 1px solid #d1d1d1;

@@ -200,16 +200,13 @@ $('#cart-button').click(function() {
     $('#Inventory-List').html('');
     cart = '';
     cart =
-        '<button id="Back-Button-Cart" onclick="draw()">Back</button><br><u><h3>Your Cart:</h3></u><br>';
+        '<button id="Back-Button-Cart" class="raise" onclick="draw()">Back</button><br><u><h3>Your Cart:</h3></u><br>';
     for (n = 0; n < CART.length; n++) {
         cart += '<b><li>' + CART[n].name;
-        // _+ '</b>&emsp;<button id="RemoveFromCartList" onclick="RemoveFromCart(' +
-        // n +
-        // ')"><i class="fa fa-cart-arrow-down" aria-hidden="true"></i></button></li>';
     }
     $('#Cart-List').html(
         cart +
-            '<br><br><button id="checkout-button" onclick="CheckOut()">Checkout!</button><br>'
+            '<br><br><button id="checkout-button" class="raise" onclick="CheckOut()">Checkout!</button><br>'
     );
 });
 $('#Sell-Form-Button').click(function() {
@@ -269,7 +266,7 @@ function draw() {
             i +
             ' onclick="AddToCart(' +
             i +
-            ')"><i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i></button></div><img src="' +
+            ')" class="raise"><i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i></button></div><img src="' +
             INVENTORY[i].picture_url +
             '"><div class="col-sm-3"><b>&nbsp;&nbsp;' +
             INVENTORY[i].name +
@@ -283,7 +280,7 @@ function draw() {
             i +
             '"onclick="RemoveFromCart(' +
             i +
-            ')"><i class="fa fa-cart-arrow-down fa-2x" aria-hidden="true"></i></button></div></div></p>';
+            ')" class="raise"><i class="fa fa-cart-arrow-down fa-2x" aria-hidden="true"></i></button></div></div></p>';
     }
     $('#Inventory-List').html(inventory);
 }
