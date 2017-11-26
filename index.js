@@ -266,7 +266,7 @@ function draw() {
             i +
             ' onclick="AddToCart(' +
             i +
-            ')" class="raise"><i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i></button></div><img src="' +
+            ')" class="raise"><i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i></button></div><img class="img-comic" src="' +
             INVENTORY[i].picture_url +
             '"><div class="col-sm-3"><b>&nbsp;&nbsp;' +
             INVENTORY[i].name +
