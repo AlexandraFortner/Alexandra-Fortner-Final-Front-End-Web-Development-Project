@@ -17,14 +17,6 @@ var INVENTORY = [
             'https://images-na.ssl-images-amazon.com/images/S/cmx-images-prod/Series/12433/12433._SX360_QL80_TTD_.jpg'
     },
     {
-        name: 'Batman: Year One',
-        price: 5.93,
-        inStock: 22,
-        seller: 'Holy Comic Books, Batman!',
-        picture_url:
-            'https://images-na.ssl-images-amazon.com/images/I/51sroPQ%2B9-L._SY344_BO1,204,203,200_.jpg'
-    },
-    {
         name: 'Wolverine Goes To Hell',
         price: 10.23,
         inStock: 12,
@@ -139,7 +131,7 @@ function CheckOut() {
         total += CART[y].price;
     }
     full_cart +=
-        '<div id="Total" class="medium-roast col-sm-2"><br><b><li>' +
+        '<div id="Total" class="dark-roast col-sm-2"><br><b><li>' +
         total +
         '</b></li></div>';
     $('#Cart-Total').html(full_cart);
