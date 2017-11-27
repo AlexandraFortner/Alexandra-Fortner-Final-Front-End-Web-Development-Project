@@ -131,7 +131,7 @@ function CheckOut() {
         total += CART[y].price;
     }
     full_cart +=
-        '<div id="Total" class="dark-roast col-sm-2"><br><b><li>' +
+        '<div id="Total" class="quicksilver col-sm-2"><br><b><li>' +
         total +
         '</b></li></div>';
     $('#Cart-Total').html(full_cart);
