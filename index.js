@@ -136,7 +136,6 @@ function CheckOut() {
         '</b></li></div>';
     $('#Cart-Total').html(full_cart);
 }
-
 // SMALL FUNCTIONS END
 // VALIDATIONS START
 $('#Item-Name').on('input', function(event) {
@@ -239,7 +238,6 @@ $('#Sell-Button').click(function() {
 // .CLICKS END
 
 // MAIN FUNCTIONS BEGIN
-
 function draw() {
     $('#Checkout').attr('hidden', 'hidden');
     $('#Total').attr('hidden', 'hidden');
@@ -280,7 +278,5 @@ function draw() {
 function main() {
     draw();
 }
-
 // MAIN FUNCTIONS END
-
 $(main);
