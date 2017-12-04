@@ -1,6 +1,30 @@
 /* COLORS START */
+.rich-charcoal {
+    background-color: #080705;
+}
+.teal {
+    background-color: #004346;
+}
+.sunset {
+    background-color: #985e6d;
+}
+.sky {
+    background-color: #09a7a7;
+}
+.slate {
+    background-color: #2e3436;
+}
+.tea-rose {
+    background-color: #f4cbc6;
+}
 .cream {
     background-color: #fff4e6;
+}
+.gold {
+    background-color: #c5b358c0;
+}
+.wine {
+    background-color: #702632b7;
 }
 .velvet {
     background-color: #854442;
@@ -18,7 +42,7 @@
     background-color: #be9b7b;
 }
 .royal-blue {
-    background-color: #18315ca8;
+    background-color: #031529;
 }
 /* COLORS END */
 /* BOXES START */
@@ -33,12 +57,14 @@
 
 .main-box {
     /* background-color: #be9b7b; */
-    background: rgba(0, 0, 0, 0.726);
+    /* background: rgba(0, 0, 0, 0.726); */
+    background-color: #2e3436;
     width: 50%;
     margin-bottom: 20px;
     padding: 12px 15px;
     border-radius: 15px;
-    border-style: outset;
+    border-style: double;
+    border-color: #fffafa4f;
     display: inline-block;
 }
 /* BOXES END */
@@ -55,11 +81,11 @@ b {
     height: 120px;
 }
 #Sell-Form-Button {
-    margin-left: -20%;
+    margin-left: -40%;
 }
 
 #cart-button {
-    margin-right: -20%;
+    margin-right: -40%;
 }
 /* IDS END */
 /* BOOTSTRAP THINGS */
@@ -139,13 +165,13 @@ button {
 }
 
 body {
-    background: url(http://www.professional.id.au/images/bg/bg3.jpg)no-repeat center
+    /* background: url(http://www.professional.id.au/images/bg/bg3.jpg)no-repeat center
         center fixed;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
-    background-size: cover;
-    color: #0a0a0a;
+    background-size: cover; */
+    background-color: #442d41;
     font: 300 1em 'Fira Sans', sans-serif;
 }
 

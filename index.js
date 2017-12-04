@@ -252,9 +252,7 @@ function draw() {
     inventory = '';
     for (i = 0; i < INVENTORY.length; i++) {
         inventory +=
-            '<p><div class="row"></b></div><br><div class="col-sm-2"><button id="AddToCart"' +
-            i +
-            ' onclick="AddToCart(' +
+            '<p><div class="row"></b></div><br><div class="col-sm-2"><button onclick="AddToCart(' +
             i +
             ')" class="raise"><i class="fa fa-cart-plus fa-2x" aria-hidden="true"></i></button></div><img class="img-comic" src="' +
             INVENTORY[i].picture_url +
